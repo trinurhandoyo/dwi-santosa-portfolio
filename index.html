@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwi Santosa | Specialist Metal Fabrication & Senior Manager</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Ambient film grain overlay for high-end cinematic feel */
+        .film-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #272a33;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+
+        /* Glow effects */
+        .amber-glow {
+            box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.25);
+        }
+        .amber-glow-sm {
+            box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased min-h-screen flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+
+    <!-- Film Grain Overlay -->
+    <div class="fixed inset-0 pointer-events-none z-50 film-grain"></div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+            <!-- Brand / Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-full bg-zinc-900 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:rotate-90 transition-all duration-500">
+                    <svg class="w-5 h-5 stroke-[2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold tracking-tight text-white group-hover:text-amber-300 transition-colors">DWI SANTOSA</span>
+                    <span class="text-[10px] tracking-widest text-zinc-400 uppercase">Fabrikasi Logam Presisi</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] font-medium uppercase text-zinc-300">
+                <a href="#profil" class="hover:text-amber-300 transition-colors py-1 relative group">
+                    Profil
+                    <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#pengalaman" class="hover:text-amber-300 transition-colors py-1 relative group">
+                    Pengalaman
+                    <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#keahlian" class="hover:text-amber-300 transition-colors py-1 relative group">
+                    Keahlian
+                    <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#pendidikan-hobi" class="hover:text-amber-300 transition-colors py-1 relative group">
+                    Pendidikan & Minat
+                    <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#kontak" class="hover:text-amber-300 transition-colors py-1 relative group">
+                    Kontak
+                    <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://wa.me/6282323602295" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 bg-zinc-900 border border-amber-500/40 text-amber-300 hover:bg-amber-400 hover:text-black px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                    <span>Hubungi WA</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-zinc-300 hover:text-white p-2" aria-label="Buka Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950/95 backdrop-blur-xl z-50 flex flex-col justify-center items-center space-y-7 text-sm tracking-[0.25em] uppercase">
+            <button id="close-btn" class="absolute top-6 right-6 text-zinc-400 hover:text-white p-2" aria-label="Tutup Menu">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="#profil" class="mobile-link text-zinc-200 hover:text-amber-400 transition-colors">Profil</a>
+            <a href="#pengalaman" class="mobile-link text-zinc-200 hover:text-amber-400 transition-colors">Pengalaman</a>
+            <a href="#keahlian" class="mobile-link text-zinc-200 hover:text-amber-400 transition-colors">Keahlian Utama</a>
+            <a href="#pendidikan-hobi" class="mobile-link text-zinc-200 hover:text-amber-400 transition-colors">Pendidikan & Minat</a>
+            <a href="#kontak" class="mobile-link text-zinc-200 hover:text-amber-400 transition-colors">Kontak</a>
+            <a href="https://wa.me/6282323602295" target="_blank" class="mt-4 inline-flex items-center gap-2 bg-amber-400 text-black px-6 py-3 rounded-full font-bold text-xs">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                <span>+62 823-2360-2295</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO HERO SECTION -->
+    <section id="hero" class="relative min-h-[90vh] flex items-center p-6 md:p-12 lg:p-16 bg-cover bg-center bg-no-repeat overflow-hidden border-b border-zinc-800/80"
+             style="background-image: linear-gradient(to right, rgba(9, 10, 15, 0.94) 0%, rgba(9, 10, 15, 0.80) 50%, rgba(9, 10, 15, 0.88) 100%), linear-gradient(to top, rgba(9, 10, 15, 1) 0%, transparent 35%), url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=2560&auto=format&fit=crop');">
+        
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-medium tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    14+ Tahun Pengalaman Fabrikasi Metal
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
+                    DWI SANTOSA
+                </h1>
+                
+                <h2 class="text-xl sm:text-2xl font-semibold text-amber-400/90 tracking-wide uppercase">
+                    Senior Production & Technical Manager
+                </h2>
+
+                <p class="text-zinc-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+                    Spesialis dalam pemrosesan plat besi (<span class="text-white font-normal">mild steel</span>) dan <span class="text-white font-normal">stainless steel</span>. Memadukan kepemimpinan teknis, kepresisian pengukuran lapangan, dan efisiensi pabrikasi manufaktur modern.
+                </p>
+
+                <!-- Actions -->
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/6282323602295" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-3 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-lg hover:shadow-amber-500/25 group">
+                        <span>Hubungi via WhatsApp</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                    
+                    <a href="#pengalaman" class="inline-flex items-center gap-2 border border-zinc-700 hover:border-zinc-500 bg-zinc-900/60 text-zinc-300 hover:text-white px-6 py-3.5 rounded-full text-sm font-medium transition-all duration-300">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-amber-400"></i>
+                        <span>Lihat Pengalaman Kerja</span>
+                    </a>
+                </div>
+
+                <!-- Stats / Key Metrics -->
+                <div class="pt-8 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-zinc-800/80 max-w-xl">
+                    <div>
+                        <span class="block text-3xl font-extrabold text-white">14+</span>
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider">Tahun Industri</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-extrabold text-white">100%</span>
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider">Presisi & QC</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-extrabold text-amber-400">MS & SS</span>
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider">Spesialis Material</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Image Accent Card -->
+            <div class="lg:col-span-4 flex justify-center">
+                <div class="relative group">
+                    <!-- Glow Backdrop -->
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-500 to-zinc-700 opacity-30 group-hover:opacity-70 blur-xl transition duration-700"></div>
+                    
+                    <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden border border-zinc-700/80 bg-zinc-900 p-2 shadow-2xl">
+                        <img src="Dwi_Santosa.jpg" 
+                             alt="Dwi Santosa - Metal Fabrication Specialist" 
+                             class="w-full h-full object-cover rounded-xl grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+                        
+                        <div class="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur-md p-3 rounded-xl border border-zinc-800 text-center">
+                            <span class="text-xs font-semibold text-white block">Dwi Santosa</span>
+                            <span class="text-[11px] text-amber-400 font-medium">Tangerang & Pekalongan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROFIL PROFESIONAL (ABOUT) -->
+    <section id="profil" class="py-20 px-6 md:px-12 bg-zinc-950 border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase block mb-2">Tentang Saya</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Profil Profesional</h2>
+                </div>
+                <p class="text-zinc-400 text-sm max-w-md mt-4 md:mt-0">
+                    Dedikasi lebih dari satu dekade dalam manufaktur, pengolahan material logam, dan kepemimpinan operasional proyek.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Bio Main Card -->
+                <div class="lg:col-span-2 bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6">
+                            <i data-lucide="user-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Ringkasan Eksekutif</h3>
+                        <p class="text-zinc-300 leading-relaxed font-light text-base md:text-lg">
+                            Praktisi manufaktur dan fabrikasi logam berpengalaman lebih dari <strong class="text-white font-semibold">14 tahun</strong> dalam pemrosesan plat besi (<em class="text-amber-300">mild steel</em>) dan <em class="text-amber-300">stainless steel</em>. Memiliki keahlian strategis dalam manajemen operasional produksi, survei & pengukuran akurat di lapangan, perancangan gambar teknik, kontrol kualitas tingkat lanjut, serta kepemimpinan tim manufaktur berskala besar.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 border-t border-zinc-800/80 mt-8">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Supervisi & Pengukuran</h4>
+                                <p class="text-xs text-zinc-400">Pengukuran lokasi presisi tinggi tanpa deviasi.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Optimasi Material</h4>
+                                <p class="text-xs text-zinc-400">Efisiensi potong/tekuk meminimalisir *defect* & waste.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Info Sidebar Card -->
+                <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800 rounded-2xl p-8 flex flex-col justify-between">
+                    <h3 class="text-lg font-bold text-white mb-6 border-b border-zinc-800 pb-4 flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-amber-400"></i>
+                        Fokus Utama Keahlian
+                    </h3>
+                    <ul class="space-y-4 text-sm text-zinc-300">
+                        <li class="flex items-center justify-between pb-3 border-b border-zinc-800/50">
+                            <span class="text-zinc-400">Mild Steel (Besi Plat)</span>
+                            <span class="text-amber-300 font-semibold">Ahli</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-3 border-b border-zinc-800/50">
+                            <span class="text-zinc-400">Stainless Steel</span>
+                            <span class="text-amber-300 font-semibold">Ahli</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-3 border-b border-zinc-800/50">
+                            <span class="text-zinc-400">Mesin Bending & Cutting</span>
+                            <span class="text-amber-300 font-semibold">Presisi Tinggi</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-3 border-b border-zinc-800/50">
+                            <span class="text-zinc-400">Manajemen Tim Produksi</span>
+                            <span class="text-amber-300 font-semibold">Skala Besar</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-zinc-400">Quality Control (QC)</span>
+                            <span class="text-amber-300 font-semibold">Menyeluruh</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-4 bg-amber-500/10 rounded-xl p-4 border border-amber-500/20">
+                        <p class="text-xs text-amber-200 leading-relaxed">
+                            "Menjamin ketepatan spesifikasi gambar kerja hingga hasil perakitan produk tiba di lokasi klien."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PENGALAMAN KERJA (EXPERIENCE) -->
+    <section id="pengalaman" class="py-20 px-6 md:px-12 bg-zinc-900/40 border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-14">
+                <span class="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase block mb-2">Rekam Jejak Karir</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Pengalaman Kerja</h2>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-zinc-800 ml-3 md:ml-6 space-y-12">
+
+                <!-- EXPERIENCE 1: PT Utama Metal Abadi -->
+                <div class="relative pl-6 md:pl-10 group">
+                    <!-- Timeline Node Indicator -->
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 border-4 border-zinc-950 group-hover:scale-125 transition-transform duration-300"></div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 hover:border-amber-500/40 rounded-2xl p-6 md:p-8 transition-all duration-300 shadow-xl">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-2 mb-6">
+                            <div>
+                                <span class="inline-block px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-2">
+                                    2022 — Sekarang
+                                </span>
+                                <h3 class="text-2xl font-bold text-white">Senior Production & Technical Manager</h3>
+                                <h4 class="text-lg text-zinc-400 font-medium flex items-center gap-2 mt-1">
+                                    <i data-lucide="building-2" class="w-4 h-4 text-amber-400"></i>
+                                    PT Utama Metal Abadi — Tangerang
+                                </h4>
+                            </div>
+                        </div>
+
+                        <!-- Job Responsibilities List -->
+                        <ul class="space-y-3.5 text-zinc-300 text-sm md:text-base font-light">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Memimpin seluruh alur produksi strategis, pengoperasian mesin pemotong (<em class="text-white">cutting</em>) & penekuk (<em class="text-white">bending</em>) presisi tinggi.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Melakukan supervisi pengukuran akurat langsung di lokasi proyek dan memvalidasi desain gambar teknik.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Mengoptimalkan efisiensi proses pabrikasi material besi dan stainless steel guna meminimalisir <em>defect</em> dan sisa bahan.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Mengarahkan koordinasi tim teknik dan operator mesin dalam memenuhi target pemesanan klien tepat waktu.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE 2: Utama Jasa Metal -->
+                <div class="relative pl-6 md:pl-10 group">
+                    <!-- Timeline Node Indicator -->
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-zinc-700 border-4 border-zinc-950 group-hover:bg-amber-400 group-hover:scale-125 transition-transform duration-300"></div>
+
+                    <div class="bg-zinc-900 border border-zinc-800 hover:border-amber-500/40 rounded-2xl p-6 md:p-8 transition-all duration-300 shadow-xl">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-2 mb-6">
+                            <div>
+                                <span class="inline-block px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs font-semibold uppercase tracking-wider mb-2">
+                                    2010 — 2021 (12 Tahun)
+                                </span>
+                                <h3 class="text-2xl font-bold text-white">Supervisor Operasional & Senior Fabricator</h3>
+                                <h4 class="text-lg text-zinc-400 font-medium flex items-center gap-2 mt-1">
+                                    <i data-lucide="wrench" class="w-4 h-4 text-amber-400"></i>
+                                    Utama Jasa Metal
+                                </h4>
+                            </div>
+                        </div>
+
+                        <!-- Job Responsibilities List -->
+                        <ul class="space-y-3.5 text-zinc-300 text-sm md:text-base font-light">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Menguasai dan memimpin seluruh proses pekerjaan fabrikasi besi & stainless steel (selain pengelasan).</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Mengatur manajemen tim lapangan dan distribusi pengerjaan proyek agar selesai tepat waktu.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Mengelola proses pembelian bahan baku serta kebutuhan pendukung operasional bengkel.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <span>Melakukan pengawasan mutu (<em>quality control</em>) hasil perakitan produk sebelum dikirim ke klien.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: KEAHLIAN UTAMA (SKILLS GRID) -->
+    <section id="keahlian" class="py-20 px-6 md:px-12 bg-zinc-950 border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-14 text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase block mb-2">Kompetensi Inti</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Keahlian Utama</h2>
+                <p class="text-zinc-400 text-sm mt-3">
+                    Penguasaan teknis dan manajemen yang komprehensif untuk mendukung standar fabrikasi tinggi.
+                </p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Skill 1 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Manajemen Produksi & Tim</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Kepemimpinan tim operasional & koordinasi alur kerja pabrikasi efisien.</p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="cog" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Mesin Bending & Cutting</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Pengoperasian presisi tinggi untuk pembentukan plat besi dan stainless.</p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="ruler" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Pengukuran Akurat Lapangan</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Survei dan validasi dimensi riil di lokasi proyek tanpa kesalahan.</p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Desain & Analisis Gambar Kerja</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Penerjemahan & validasi teknik blueprint menjadi panduan produksi.</p>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="hammer" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Fabrikasi Besi & Stainless Steel</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Spesialisasi pengolahan mild steel dan stainless steel mutakhir.</p>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Perencanaan & Pembelian Material</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Estimasi bahan baku dan pengadaan barang pendukung operasional.</p>
+                </div>
+
+                <!-- Skill 7 -->
+                <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl p-6 hover:border-amber-500/50 hover:bg-zinc-900 transition-all duration-300 group sm:col-span-2 lg:col-span-1 xl:col-span-2">
+                    <div class="w-12 h-12 rounded-lg bg-zinc-800 group-hover:bg-amber-500/20 border border-zinc-700 group-hover:border-amber-400/50 flex items-center justify-center text-amber-400 mb-4 transition-colors">
+                        <i data-lucide="check-square" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2">Kontrol Kualitas (QC) Menyeluruh</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Inspeksi ketat kelayakan produk dan hasil perakitan sebelum serah terima.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PENDIDIKAN & HOBI (EDUCATION & INTERESTS) -->
+    <section id="pendidikan-hobi" class="py-20 px-6 md:px-12 bg-zinc-900/40 border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            <!-- Pendidikan -->
+            <div>
+                <div class="mb-8">
+                    <span class="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase block mb-2">Latar Belakang</span>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Pendidikan</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- SMP -->
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex items-center gap-4 hover:border-zinc-700 transition-all">
+                        <div class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-amber-400 shrink-0">
+                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">SMPN 02 PANINGGARAN</h3>
+                            <span class="inline-block mt-1 px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-300 text-xs font-medium">Lulus</span>
+                        </div>
+                    </div>
+
+                    <!-- SD -->
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex items-center gap-4 hover:border-zinc-700 transition-all">
+                        <div class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-amber-400 shrink-0">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">SDN 01 TENOGO</h3>
+                            <span class="inline-block mt-1 px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-300 text-xs font-medium">Lulus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobi & Minat -->
+            <div>
+                <div class="mb-8">
+                    <span class="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase block mb-2">Gaya Hidup & Personal</span>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Hobi & Minat</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Hobi 1 -->
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col items-start hover:border-amber-500/40 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="fish" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Memancing</h3>
+                        <p class="text-xs text-zinc-400">Melatih kesabaran, keheningan, dan ketelitian fokus.</p>
+                    </div>
+
+                    <!-- Hobi 2 -->
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col items-start hover:border-amber-500/40 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="bike" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Touring / Riding Motor</h3>
+                        <p class="text-xs text-zinc-400">Eksplorasi perjalanan dan kecintaan pada dunia otomotif.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: KONTAK (CONTACT SECTION) -->
+    <section id="kontak" class="py-20 px-6 md:px-12 bg-zinc-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-gradient-to-r from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-8 md:p-14 relative z-10 shadow-2xl">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase block">Hubungi Langsung</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                            Siap Bekerja Sama & Diskusi Proyek
+                        </h2>
+                        <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed">
+                            Membutuhkan manajer teknik berpengalaman atau konsultasi terkait fabrikasi besi dan stainless steel presisi tinggi? Silakan hubungi saya melalui telepon atau WhatsApp.
+                        </p>
+
+                        <!-- Contact Direct Info -->
+                        <div class="pt-4 space-y-4">
+                            <a href="https://wa.me/6282323602295" target="_blank" rel="noopener noreferrer" 
+                               class="flex items-center gap-4 text-zinc-200 hover:text-amber-300 transition-colors group">
+                                <div class="w-11 h-11 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-zinc-400 block uppercase tracking-wider">Telepon / WhatsApp</span>
+                                    <span class="text-lg md:text-xl font-bold tracking-wide">+62 823-2360-2295</span>
+                                </div>
+                            </a>
+
+                            <div class="flex items-start gap-4 text-zinc-200">
+                                <div class="w-11 h-11 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-1">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-zinc-400 block uppercase tracking-wider">Alamat Domisili</span>
+                                    <span class="text-sm md:text-base font-medium">Desa Tenogo, Kec. Paninggaran, Kab. Pekalongan, Jawa Tengah</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action CTA Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="w-full bg-zinc-950/80 border border-zinc-800 p-8 rounded-2xl text-center space-y-6">
+                            <div class="w-16 h-16 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mx-auto">
+                                <i data-lucide="send" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Kirim Pesan WhatsApp</h3>
+                                <p class="text-xs text-zinc-400">Respons cepat untuk konsultasi atau tawaran profesional.</p>
+                            </div>
+                            <a href="https://wa.me/6282323602295" target="_blank" rel="noopener noreferrer" 
+                               class="block w-full py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-amber-400/20">
+                                Mulai Chat WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-zinc-950 border-t border-zinc-900 py-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-light">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-zinc-200">DWI SANTOSA</span>
+                <span>— Specialist Metal Fabrication & Senior Production Manager</span>
+            </div>
+            <div>
+                <span>© Curriculum Vitae Portfolio • Pekalongan & Tangerang</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons & Interactivity Script -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Navigation Drawer Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
